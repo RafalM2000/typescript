@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "typescriptShortTutorial"
+    }
+  },
+  "defaultProject": "typescriptShortTutorial",
+  "cli": {
+    "analytics": false
+  }
 }

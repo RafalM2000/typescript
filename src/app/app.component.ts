@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BookComponent } from './book/book.component';
+import { BookslistService } from './bookslist.service';
+
+
 
 
 @Component({
@@ -6,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent extends BookComponent implements OnInit {
   title: any = 'TYPESCRIPT';
-
-  constructor() {}
+  constructor(books: BookslistService) {
+    super(books);
+  }
 
 
   ngOnInit(): void {
@@ -20,6 +25,8 @@ export class AppComponent implements OnInit {
     if (!sex) {
       sex = 'Man';
     }
-    console.log(name, sex);
+    console.log('AppComponent ---> ', name, sex, 'BookComponent ---> ', this.bookTitle,  this.getAuthor(),
+    'BooksListService ---->', this.books.booksList
+    );
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BookslistService } from '../bookslist.service';
 
 @Component({
   selector: 'app-book',
@@ -8,17 +7,22 @@ import { BookslistService } from '../bookslist.service';
 })
 export class BookComponent implements OnInit {
 
-  bookTitle = 'Ulisses';
-  bookAuthor = 'James Joyce';
+readonly book: {title: string, readonly author: string} = {title: 'Zbrodnia i Kara', author: 'Fiodor Dostojewski'};
 
-  constructor(public books: BookslistService) { }
+  constructor() {
+   }
 
   ngOnInit(): void {
-    console.log('booksList--->', this.books.booksList);
+    // this.book = {
+    //   title: 'Anna Karenina',
+    //   author: 'Lew Tołstoj'
+    //   };
+
+    // this.book.author = 'F.D';
   }
 
-  getAuthor(): string {
-    return this.bookAuthor;
-  }
+  // getAuthor(): string {
+  //   return this.book.author;
+  // }
 
 }
